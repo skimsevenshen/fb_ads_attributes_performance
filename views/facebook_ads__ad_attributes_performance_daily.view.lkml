@@ -93,6 +93,8 @@ view: facebook_ads__ad_attributes_performance_daily {
 
   measure: count {
     type: count
+    label: "Ad count"
+    description: "Count of ad_id."
     drill_fields: [ad_id]
   }
 
