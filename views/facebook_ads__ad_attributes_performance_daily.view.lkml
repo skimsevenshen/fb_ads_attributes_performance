@@ -78,6 +78,12 @@ view: facebook_ads__ad_attributes_performance_daily {
     sql: ${TABLE}."THUMBNAIL_URL" ;;
   }
 
+  dimension: thumbnail_image {
+    type: string
+    sql: ${TABLE}."THUMBNAIL_URL";;
+    html: <img src="{{value}}" /> ;;
+  }
+
   dimension: type {
     type: string
     sql: ${TABLE}."TYPE" ;;
