@@ -66,6 +66,8 @@ view: facebook_ads__ad_attributes_performance_daily {
   measure: spend {
     type: sum
     sql: ${TABLE}."SPEND" ;;
+    value_format:"$#,##0;($#,##0)"
+    label: "Ad Spend"
   }
 
   dimension: textoverlay_indicator {
@@ -91,6 +93,6 @@ view: facebook_ads__ad_attributes_performance_daily {
 
   measure: count {
     type: count
-    drill_fields: [ad_name]
+    drill_fields: [ad_id]
   }
 }
