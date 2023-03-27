@@ -95,4 +95,22 @@ view: facebook_ads__ad_attributes_performance_daily {
     type: count
     drill_fields: [ad_id]
   }
+
+measure: conversion_rate{
+  group_label: "KPIs"
+  label: "Conversion Rate"
+  description: "Conversion rate defined as orders divided by clicks."
+  type: number
+  sql: ${orders}* 1.0/ NULLIF(${clicks},0) ;;
+  value_format_name: percent_2
+  }
+
+measure: click_through_rate {
+    group_label: "KPIs"
+    label: "Click Through Rate"
+    description: "Click through rate defined as clicks divided by impressions."
+    type: number
+    sql: ${clicks}* 1.0/ NULLIF(${impressions},0) ;;
+    value_format_name: percent_2
+  }
 }
