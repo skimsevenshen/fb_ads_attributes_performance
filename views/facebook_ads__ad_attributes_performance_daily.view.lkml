@@ -121,7 +121,7 @@ measure: click_through_rate {
     label: "Cost per Thousand Impressions"
     description: "Spend divided by thousand impressions."
     type: number
-    sql: ${spend}* 1.0/ (NULLIF(${impressions},0)*1000.0) ;;
+    sql: ${spend}* 1.0/ (NULLIF(${impressions},0)/1000.0) ;;
     value_format_name:usd
   }
 }
