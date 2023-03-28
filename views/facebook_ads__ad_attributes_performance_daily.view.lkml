@@ -108,20 +108,29 @@ measure: conversion_rate{
   }
 
 measure: click_through_rate {
-    group_label: "KPIs"
-    label: "Click Through Rate"
-    description: "Click through rate defined as clicks divided by impressions."
-    type: number
-    sql: ${clicks}* 1.0/ NULLIF(${impressions},0) ;;
-    value_format_name: percent_2
+  group_label: "KPIs"
+  label: "Click Through Rate"
+  description: "Click through rate defined as clicks divided by impressions."
+  type: number
+  sql: ${clicks}* 1.0/ NULLIF(${impressions},0) ;;
+  value_format_name: percent_2
   }
 
-  measure: cost_per_thousand_impressions {
-    group_label: "KPIs"
-    label: "Cost per Thousand Impressions"
-    description: "Spend divided by thousand impressions."
-    type: number
-    sql: ${spend}* 1.0/ (NULLIF(${impressions},0)/1000.0) ;;
-    value_format_name:usd
+measure: cost_per_thousand_impressions {
+  group_label: "KPIs"
+  label: "Cost per Thousand Impressions"
+  description: "Spend divided by thousand impressions."
+  type: number
+  sql: ${spend}* 1.0/ (NULLIF(${impressions},0)/1000.0) ;;
+  value_format_name:usd
+  }
+
+measure: cost_per_order {
+  group_label: "KPIs"
+  label: "Cost per Order"
+  description: "Spend divided by order."
+  type: number
+  sql: ${spend}* 1.0/ (NULLIF(${orders},0) ;;
+  value_format_name:usd
   }
 }
