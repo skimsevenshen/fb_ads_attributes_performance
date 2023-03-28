@@ -115,4 +115,13 @@ measure: click_through_rate {
     sql: ${clicks}* 1.0/ NULLIF(${impressions},0) ;;
     value_format_name: percent_2
   }
+
+  measure: cost_per_thousand_impressions {
+    group_label: "KPIs"
+    label: "Cost per Thousand Impressions"
+    description: "Spend divided by thousand impressions."
+    type: number
+    sql: ${spend}* 1.0/ NULLIF(${impressions}*1000,0) ;;
+    value_format:"$#,##0;($#,##0)"
+  }
 }
