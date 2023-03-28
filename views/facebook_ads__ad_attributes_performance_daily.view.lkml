@@ -122,5 +122,14 @@ measure: cost_per_thousand_impressions {
   description: "Spend divided by thousand impressions."
   type: number
   sql: ${spend}* 1.0/ (NULLIF(${impressions},0)/1000.0) ;;
-  value_format_name:usd
+  value_format_name: usd
+  }
+
+  measure: cost_per_order {
+    group_label: "KPIs"
+    label: "Cost per Order"
+    description: "Spend divided by order."
+    type: number
+    sql: ${spend}* 1.0/ (NULLIF(${orders},0) ;;
+    value_format_name: usd
   }}
