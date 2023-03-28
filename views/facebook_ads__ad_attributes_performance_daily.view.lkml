@@ -60,7 +60,7 @@ view: facebook_ads__ad_attributes_performance_daily {
 
   dimension: product_category {
     type: string
-    sql: ${TABLE}."PRODUCT_CATEGORY" ;;
+    sql: LOWER(REPLACE(${TABLE}."PRODUCT_CATEGORY", ' ', '')) ;;
   }
 
   measure: spend {
