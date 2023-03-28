@@ -130,6 +130,6 @@ measure: cost_per_thousand_impressions {
     label: "Cost per Order"
     description: "Spend divided by order."
     type: number
-    sql: ${spend}* 1.0/ (NULLIF(${orders},0) ;;
+    sql: ${spend}* 1.0/ NULLIF(${orders},0) ;;
     value_format_name: usd
   }}
